@@ -1,0 +1,72 @@
+<div class="container">
+  <div
+    class="form-check"
+    *ngFor="let author of authors"
+    (change)="pushSelectedAuthorId(author.authorId)"
+  >
+    <label class="form-check-label">
+      <input
+        class="form-check-input"
+        type="checkbox"
+        value=""
+        id="flexCheckDefault1"
+      />
+      {{ author.authorName }}
+    </label>
+  </div>
+</div>
+
+
+
+<div class="container">
+  <div
+    class="form-check"
+    *ngFor="let publisher of publishers"
+    (change)="pushSelectedPublisherId(publisher.publisherId)"
+  >
+    <label class="form-check-label">
+      <input
+        class="form-check-input"
+        type="checkbox"
+        value=""
+        id="flexCheckDefault2"
+      />
+      {{ publisher.publisherName }}
+    </label>
+  </div>
+</div>
+
+
+<div class="container">
+  <div
+    class="form-check"
+    *ngFor="let language of languages"
+    (change)="pushSelectedLanguageId(language.languageId)"
+  >
+    <label class="form-check-label">
+      <input
+        class="form-check-input"
+        type="checkbox"
+        value=""
+        id="flexCheckDefault3"
+      />
+      {{ language.languageName }}
+    </label>
+  </div>
+</div>
+
+
+<button
+  type="button"
+  class="btn btn-primary"
+  routerLink="/filter/author&publisher&language/{{ selectedAuthorIds }}/{{
+    selectedPublisherIds
+  }}/{{ selectedLanguageIds }}"
+>
+  Filtrele
+</button>
+
+<button type="button" class="btn btn-primary" (click)="yazdir()">Yazdır</button>
+<button type="button" class="btn btn-primary" (click)="listeyiTemizle()">
+  Temizle
+</button>
