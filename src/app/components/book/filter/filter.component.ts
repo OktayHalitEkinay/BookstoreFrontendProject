@@ -18,12 +18,16 @@ export class FilterComponent implements OnInit {
   public authors: Author[]= [];
   public publishers: Array<Publisher> = [];
   public languages: Array<Language> = [];
-  
+  public genres:Array<Language> = [];
+  public minStock: number=-1;
+  public maxStock: number=-1;
+  public minPrice: number=-1;
+  public maxPrice: number=-1;
 
   public selectedAuthorIds: Array<number> = [-1];
   public selectedPublisherIds: Array<number> = [-1];
   public selectedLanguageIds: Array<number> = [-1];
-  
+  public selectedGenreIds: Array<number> = [-1];
   
   constructor(private activatedRoute: ActivatedRoute,
     private publisherService:PublisherService,
@@ -71,6 +75,17 @@ export class FilterComponent implements OnInit {
       this.selectedLanguageIds.push(languageId);
     }
     this.selectedLanguageIds=this.selectedLanguageIds.slice()
+  }
+  pushSelectedGenreId(genreId:number) {
+
+    if(this.selectedGenreIds.includes(genreId)){
+      let x=this.selectedGenreIds.indexOf(genreId)
+       console.log("Silinen eleman:"+this.selectedGenreIds.splice(x,1)) 
+    }
+    else{
+      this.selectedGenreIds.push(genreId);
+    }
+    this.selectedGenreIds=this.selectedGenreIds.slice()
   }
 
 

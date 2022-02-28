@@ -9,6 +9,8 @@ export interface BookDetailDto{
     languageCode:string
     languageName:string
     publisherName:string
+    price:number
+    stock:number
     // authors:Authors[]
     // images:BookImage[]
 }

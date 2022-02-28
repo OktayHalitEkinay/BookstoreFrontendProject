@@ -1,54 +1,13 @@
-<div style="background-color: #e3e3e3; padding-left: 5%; padding-right: 5%;" >
-    <div class="row">
-      <div class="col-md-4 d-flex justify-content-center mt-3 ">
-        <a href="/">
-          <img src="../assets/sevgi-ayi-turk-edebiyati-klasiklerinde-3-al-2-ode-kmp-blok.jpg" alt="" style="height: 222px ;width:auto;" />
-        </a>
-      </div>
-      <div class="col-md-4 d-flex justify-content-center mt-3">
-        <a href="/">
-          <img src="../assets/sevgi-ayi-turk-edebiyati-klasiklerinde-3-al-2-ode-kmp-blok.jpg" alt="" style="height: 222px" />
-        </a>
-      </div>
-      <div class="col-md-4 d-flex justify-content-center mt-3">
-        <a href="/">
-          <img src="../assets/sevgi-ayi-turk-edebiyati-klasiklerinde-3-al-2-ode-kmp-blok.jpg" alt="" style="height: 222px" />
-        </a>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-4 d-flex justify-content-center mt-3 ">
-        <a href="/">
-          <img src="../assets/sevgi-ayi-turk-edebiyati-klasiklerinde-3-al-2-ode-kmp-blok.jpg" alt="" style="height: 222px ;width:auto;" />
-        </a>
-      </div>
-      <div class="col-md-4 d-flex justify-content-center mt-3">
-        <a href="/">
-          <img src="../assets/sevgi-ayi-turk-edebiyati-klasiklerinde-3-al-2-ode-kmp-blok.jpg" alt="" style="height: 222px" />
-        </a>
-      </div>
-      <div class="col-md-4 d-flex justify-content-center mt-3">
-        <a href="/">
-          <img src="../assets/sevgi-ayi-turk-edebiyati-klasiklerinde-3-al-2-ode-kmp-blok.jpg" alt="" style="height: 222px" />
-        </a>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-4 d-flex justify-content-center mt-3 mb-3">
-        <a href="/">
-          <img src="../assets/sevgi-ayi-turk-edebiyati-klasiklerinde-3-al-2-ode-kmp-blok.jpg" alt="" style="height: 222px ;width:auto;" />
-        </a>
-      </div>
-      <div class="col-md-4 d-flex justify-content-center mt-3 mb-3">
-        <a href="/">
-          <img src="../assets/sevgi-ayi-turk-edebiyati-klasiklerinde-3-al-2-ode-kmp-blok.jpg" alt="" style="height: 222px" />
-        </a>
-      </div>
-      <div class="col-md-4 d-flex justify-content-center mt-3 mb-3">
-        <a href="/">
-          <img src="../assets/sevgi-ayi-turk-edebiyati-klasiklerinde-3-al-2-ode-kmp-blok.jpg" alt="" style="height: 222px" />
-        </a>
-      </div>
+<div style="background-color: #e3e3e3; padding-left: 5%; padding-right: 5%">
+  <div class="row">
+    <div class="col-md-4 d-flex justify-content-center mt-3" *ngFor="let image of componentDetail[0].componentImages;">
+      <a href="/">
+        <img
+          src="{{ image.imagePath }}"
+          alt=""
+          style="height: 222px; width: auto"
+        />
+      </a>
     </div>
   </div>
-  
+</div>

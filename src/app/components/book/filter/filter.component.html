@@ -16,8 +16,6 @@
   </div>
 </div>
 
-
-
 <div class="container">
   <div
     class="form-check"
@@ -35,7 +33,6 @@
     </label>
   </div>
 </div>
-
 
 <div class="container">
   <div
@@ -55,16 +52,18 @@
   </div>
 </div>
 
-
 <button
   type="button"
   class="btn btn-primary"
-  routerLink="/filter/author&publisher&language/{{ selectedAuthorIds }}/{{
-    selectedPublisherIds
-  }}/{{ selectedLanguageIds }}"
+  routerLink="/filter/author&publisher&language&genre&minStock&maxStock&minPrice&maxPrice/{{
+    selectedAuthorIds
+  }}/{{ selectedPublisherIds }}/{{ selectedLanguageIds }}/{{
+    selectedGenreIds
+  }}/{{-1}}/{{-1}}/{{-1}}/{{-1}}"
 >
   Filtrele
 </button>
+
 
 <button type="button" class="btn btn-primary" (click)="yazdir()">Yazdır</button>
 <button type="button" class="btn btn-primary" (click)="listeyiTemizle()">

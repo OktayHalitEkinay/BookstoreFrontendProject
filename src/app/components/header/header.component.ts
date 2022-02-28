@@ -14,17 +14,11 @@ export class HeaderComponent implements OnInit {
     componentId:0,
     componentImages:[],
     componentName:"",
-    imagePath:""
   }
   constructor(private activatedRoute: ActivatedRoute,private componentService:ComponentService) { }
 
   ngOnInit(): void {
         this.getAllComponentDetailsByComponentId(componentId)   
-  }
-  getAllComponentDetails() {
-    this.componentService.getAllComponentDetails().subscribe(response=>{
-      this.componentDetail = response.data
-    })   
   }
   getAllComponentDetailsByComponentId(componentId:number){    
     this.componentService.getAllComponentDetailsByComponentId(componentId).subscribe(response=>{

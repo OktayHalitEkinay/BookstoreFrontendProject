@@ -1,0 +1,32 @@
+<section class="section-products">
+  <div class="container">
+    <div class="row">
+      <!-- Single Product -->
+      <div class="col-md-6 col-lg-4 col-xl-3" *ngFor="let book of books">
+        <div id="product-1" class="single-product">
+          <div class="part-1">
+            <ul>
+              <li>
+                <a href="#"><i class="fas fa-shopping-cart"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-heart"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-plus"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-expand"></i></a>
+              </li>
+            </ul>
+          </div>
+          <div class="part-2">
+            <h3 class="product-title">{{ book.title }}</h3>
+            <!-- <h4 class="product-old-price">{{book.languageName}}</h4> -->
+            <h4 class="product-price">{{ book.price }}₺</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
