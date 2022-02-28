@@ -33,54 +33,72 @@ export class BookService {
     let languageIdsArray = languageIds.toString().split(',');
     let genreIdsArray = genreIds.toString().split(',');
     console.log(authorIdsArray)
-    //Buradaki ifade önyüzden hiçbir author id girişi yapılmadığı anlamına gelmektedir.
+    // Buradaki ifade önyüzden hiçbir author id girişi yapılmadığı anlamına gelmektedir.
 
-    // if (authorIdsArray.length != 1) {
-    //   Array.prototype.forEach.call(authorIdsArray, (element) => {
-    //     Path = Path + 'authorIds=' + element;
-    //     if (element != authorIdsArray[authorIdsArray.length - 1]) {
-    //       Path = Path + '&';
-    //     }
-    //   });
-    // }
+    if (authorIdsArray.length != 1) {
+      Array.prototype.forEach.call(authorIdsArray, (element) => {
+        Path = Path + 'authorIds=' + element;
+        if (element != authorIdsArray[authorIdsArray.length - 1]) {
+          Path = Path + '&';
+        }
+      });
+    }
 
-    // if (publisherIdsArray.length != 1) {
-    //   if (Path === '') {
-    //     Array.prototype.forEach.call(publisherIdsArray, (element) => {
-    //       Path = Path + 'publisherIds=' + element;
-    //       if (element != publisherIdsArray[publisherIdsArray.length - 1]) {
-    //         Path = Path + '&';
-    //       }
-    //     });
-    //   } else {
-    //     Path = Path + '&';
-    //     Array.prototype.forEach.call(publisherIdsArray, (element) => {
-    //       Path = Path + 'publisherIds=' + element;
-    //       if (element != publisherIdsArray[publisherIdsArray.length - 1]) {
-    //         Path = Path + '&';
-    //       }
-    //     });
-    //   }
-    // }
+    if (publisherIdsArray.length != 1) {
+      if (Path === '') {
+        Array.prototype.forEach.call(publisherIdsArray, (element) => {
+          Path = Path + 'publisherIds=' + element;
+          if (element != publisherIdsArray[publisherIdsArray.length - 1]) {
+            Path = Path + '&';
+          }
+        });
+      } else {
+        Path = Path + '&';
+        Array.prototype.forEach.call(publisherIdsArray, (element) => {
+          Path = Path + 'publisherIds=' + element;
+          if (element != publisherIdsArray[publisherIdsArray.length - 1]) {
+            Path = Path + '&';
+          }
+        });
+      }
+    }
 
-    // if (languageIdsArray.length != 1) {
-    //   if (Path === '') {
-    //     Array.prototype.forEach.call(languageIdsArray, (element) => {
-    //       Path = Path + 'languageIds=' + element;
-    //       if (element != languageIdsArray[languageIdsArray.length - 1]) {
-    //         Path = Path + '&';
-    //       }
-    //     });
-    //   } else {
-    //     Path = Path + '&';
-    //     Array.prototype.forEach.call(languageIdsArray, (element) => {
-    //       Path = Path + 'languageIds=' + element;
-    //       if (element != languageIdsArray[languageIdsArray.length - 1]) {
-    //         Path = Path + '&';
-    //       }
-    //     });
-    //   }
-    // }
+    if (languageIdsArray.length != 1) {
+      if (Path === '') {
+        Array.prototype.forEach.call(languageIdsArray, (element) => {
+          Path = Path + 'languageIds=' + element;
+          if (element != languageIdsArray[languageIdsArray.length - 1]) {
+            Path = Path + '&';
+          }
+        });
+      } else {
+        Path = Path + '&';
+        Array.prototype.forEach.call(languageIdsArray, (element) => {
+          Path = Path + 'languageIds=' + element;
+          if (element != languageIdsArray[languageIdsArray.length - 1]) {
+            Path = Path + '&';
+          }
+        });
+      }
+    }
+    if (genreIdsArray.length != 1) {
+      if (Path === '') {
+        Array.prototype.forEach.call(genreIdsArray, (element) => {
+          Path = Path + 'genreIds=' + element;
+          if (element != genreIdsArray[genreIdsArray.length - 1]) {
+            Path = Path + '&';
+          }
+        });
+      } else {
+        Path = Path + '&';
+        Array.prototype.forEach.call(genreIdsArray, (element) => {
+          Path = Path + 'genreIds=' + element;
+          if (element != genreIdsArray[genreIdsArray.length - 1]) {
+            Path = Path + '&';
+          }
+        });
+      }
+    }
 
     let newPath = this.apiUrl + 'Books/GetAllBookDetailsByFilter?' + Path;
     return this.httpClient.get<ListResponseModel<BookDetailDto>>(newPath);

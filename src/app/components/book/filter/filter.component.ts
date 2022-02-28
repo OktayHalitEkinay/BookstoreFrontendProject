@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Author } from 'src/app/models/author';
+import { Genre } from 'src/app/models/genre';
 import { Language } from 'src/app/models/language';
 import { Publisher } from 'src/app/models/publisher';
 import { AuthorService } from 'src/app/services/author.service';
+import { GenreService } from 'src/app/services/genre.service';
 import { LanguageService } from 'src/app/services/language.service';
 import { PublisherService } from 'src/app/services/publisher.service';
 
@@ -18,7 +20,8 @@ export class FilterComponent implements OnInit {
   public authors: Author[]= [];
   public publishers: Array<Publisher> = [];
   public languages: Array<Language> = [];
-  public genres:Array<Language> = [];
+  public genres:Array<Genre> = [];
+  
   public minStock: number=-1;
   public maxStock: number=-1;
   public minPrice: number=-1;
@@ -32,7 +35,8 @@ export class FilterComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute,
     private publisherService:PublisherService,
     private languageService:LanguageService,
-    private authorService:AuthorService) {
+    private authorService:AuthorService,
+    private genreService:GenreService) {
     
   }
 
@@ -40,6 +44,7 @@ export class FilterComponent implements OnInit {
    this.getAuthors();
    this.getPublishers();
    this.getLanguages();
+   this.getGenres();
   }
 
   pushSelectedAuthorId(authorId:number) {
@@ -64,7 +69,6 @@ export class FilterComponent implements OnInit {
     }
     this.selectedPublisherIds=this.selectedPublisherIds.slice()
   }
-
   pushSelectedLanguageId(languageId:number) {
 
     if(this.selectedLanguageIds.includes(languageId)){
@@ -121,5 +125,9 @@ export class FilterComponent implements OnInit {
       this.languages = response.data
     })   
   }
-
+  getGenres(){
+    this.genreService.getAll().subscribe(response=>{
+      this.genres = response.data
+    })   
+  }
 }
