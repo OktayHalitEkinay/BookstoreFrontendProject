@@ -10,10 +10,11 @@ import { componentId } from './componentId';
 })
 export class NavComponent implements OnInit {
 	componentDetail: ComponentDetailDto={
-		componentId:0,
-		componentImages:[],
-		componentName:"",
-	  }
+    componentId: 0,
+    componentImages: [],
+    componentName: "",
+    componentStrings: []
+  }
   constructor(private activatedRoute: ActivatedRoute,private componentService:ComponentService) { }
 
   ngOnInit(): void {

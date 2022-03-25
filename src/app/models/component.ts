@@ -1,4 +1,4 @@
 export interface Component{
-    Id:number;
+    id:number;
     componentName:string;
 }

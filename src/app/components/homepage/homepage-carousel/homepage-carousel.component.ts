@@ -14,6 +14,7 @@ export class HomepageCarouselComponent implements OnInit {
     componentId:0,
     componentImages:[],
     componentName:"",
+    componentStrings:[]
   }
   constructor(private activatedRoute: ActivatedRoute,private componentService:ComponentService) { }
 

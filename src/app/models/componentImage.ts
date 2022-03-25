@@ -1,5 +1,5 @@
 export interface ComponentImage{
-    Id:number;
+    id:number;
     componentId:number;
     imagePath:string;
 }
